@@ -1,0 +1,10 @@
+{% extends "_base.html" %}
+{% block content %}
+    <div class="message error-message">
+        An error occured while trying to talk with services.<br>
+        <br>
+        {% include "_error_id.html" %}
+        Please try again later.
+    </div>
+    {% include "_try_again.html" %}
+{% endblock %}

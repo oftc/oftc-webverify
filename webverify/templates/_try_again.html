@@ -1,0 +1,9 @@
+{% if token %}
+    {% set action = url_for('verify', token=token) %}
+{% else %}
+    {% set action = '' %}
+{% endif %}
+
+<form class="try-again-form" action="{{ action }}">
+    <input class="try-again-button" type="submit" value="Try again">
+</form>

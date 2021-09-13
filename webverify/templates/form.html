@@ -1,0 +1,42 @@
+{% extends "_base.html" %}
+{% block head %}
+    <script>
+        function on_expire(response) {
+            window.btn.disabled = true;
+        }
+
+        function on_success(response) {
+            {% if auto_submit %}
+                document.getElementById('verification-form').submit();
+            {% else %}
+                window.btn.disabled = false;
+            {% endif %}
+        }
+    </script>
+
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+{% endblock %}
+{% block after_body %}
+    <script>
+        window.btn = document.getElementById('verification-button');
+        window.btn.disabled = true;
+        {% if auto_submit %}
+            window.btn.style.display = 'none';
+        {% endif %}
+    </script>
+{% endblock %}
+{% block content %}
+    <div class='verification-message'>Verification for
+    {# <div class='message'>Verification for #}
+        <span class="nick">{{ nick }}</span>
+    </div>
+    <form id="verification-form" class="verification-form" action="" method="POST">
+        {% if token %}
+            <input type="hidden" name="token" value='{{ token }}'>
+        {% endif %}
+        <div class="h-captcha" data-sitekey="{{ hcaptcha_site_key }}"
+            data-callback="on_success" data-expired-callback="on_expire"></div>
+        <input id="verification-button" name="verification-button"
+            class='verification-button' type="submit" value="Verify">
+    </form>
+{% endblock %}

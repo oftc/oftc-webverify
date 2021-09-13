@@ -1,0 +1,34 @@
+{% extends "_base.html" %}
+{% block content %}
+    <div class='message error-message'>
+        {% if error == 'invalid-or-already-seen-response' %}
+            The captcha is invalid or already used.<br>
+            <br>
+            Please try again.
+        {% elif error == 'missing-input-response' %}
+            The captcha verification was not received correctly.<br>
+            <br>
+            Please try again.
+        {% elif error == 'invalid-input-response' %}
+            The captcha verification failed.<br>
+            <br>
+            Please try again.
+        {% elif error == 'captcha-timeout' %}
+            The captcha verification timed out.<br>
+            <br>
+            Please try again.
+        {% elif error == 'captcha-bad-response' %}
+            The response from hCaptcha was bad.<br>
+            <br>
+            Please try again.
+        {% else %}
+            Unknown error.<br>
+            <br>
+            {% include "_error_id.html" %}
+            Please contact the OFTC support.
+        {% endif %}
+    </div>
+    {% if token %}
+        {% include "_try_again.html" %}
+    {% endif %}
+{% endblock %}

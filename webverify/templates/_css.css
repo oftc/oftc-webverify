@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    background-color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333333;
+}
+
+.container {
+    width: min-content;
+    min-width: 300px;
+    margin: 20px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-container {
+    margin-bottom: 26px;
+    display: flex;
+}
+
+.logo {
+    margin: 0 auto 0 auto;
+    display: flex;
+    align-self: center;
+}
+
+.logo-text {
+    font-size: 40px;
+    align-self: flex-end;
+    /*margin-left: 19px;
+    margin-bottom: 6px;*/
+    /*margin-left: 14px;
+    margin-bottom: 16px;*/
+    margin-left: 14px;
+    margin-bottom: 6px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #727272;
+}
+
+.footer > a {
+    color: #727272;
+    text-decoration: none;
+}
+
+.footer > a:hover {
+    color: #333333;
+    text-decoration: underline;
+}
+
+.message {
+    text-align: center;
+}
+
+.message > div {
+    margin-top: 16px;
+}
+
+.message > div:first-child {
+    margin-top: 0px;
+}
+
+.error-message {
+    color: red;
+}
+
+.error-id {
+    font-size: 12px;
+}
+
+.nick {
+    font-weight: bold;
+}
+
+.success {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.try-again-form {
+    display: flex;
+}
+
+.try-again-button {
+    margin: 16px auto 0 auto;
+    width: 60%;
+    padding: 6px;
+    font-size: 14px;
+    align-self: center;
+}
+
+.verification-form {
+    margin-top: 6px;
+}
+
+.verification-button {
+    width: 100%;
+    padding: 6px;
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+.h-captcha {
+    height: 78px;
+    width: 303px;
+}

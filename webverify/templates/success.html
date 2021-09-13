@@ -1,0 +1,13 @@
+{% extends "_base.html" %}
+{% block content %}
+    <div class="message">
+        <div class='success'>Success!</div>
+        <div>
+            <span class="nick">{{ nick }}</span>
+            <span>is now verified.</span>
+        </div>
+        <div>
+            If you are currently logged in on IRC, your verified status will be updated momentarily.
+        </div>
+    </div>
+{% endblock %}

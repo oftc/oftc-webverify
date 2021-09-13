@@ -1,0 +1,10 @@
+__pycache__
+_scratch
+*.code-workspace
+log
+venv
+dist
+build
+webverify-venv
+webverify.cfg
+webverify.uwsgi.ini

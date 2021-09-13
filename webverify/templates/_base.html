@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>OFTC - Services Account Verification</title>
+    <style>
+        {% include "_css.css" %}
+    </style>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <div class="logo">
+                <div><img height="60px" width="60px" src="{{ url_for('static', filename='oftc-80.png') }}"></div>
+                <div class="logo-text">OFTC</div>
+            </div>
+        </div>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+        <div class="footer">
+            <a href="https://oftc.net">Homepage</a>
+            &hyphen;
+            <a href="https://oftc.net/Privacy_Policy/">Privacy Policy</a>
+        </div>
+    </div>
+</body>
+{% block after_body %}{% endblock %}
+</html>

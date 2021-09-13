@@ -1,0 +1,24 @@
+{% extends "_base.html" %}
+{% block content %}
+    <div class='message error-message'>
+        {% if error == 'token-missing' %}
+            The token is missing.
+        {% elif error == 'token-mismatch' %}
+            Please use the link provided by NickServ.
+        {% elif error == 'token-invalid' %}
+            The token is invalid.
+        {% elif error == 'token-expired' %}
+            The token has expired.
+        {% elif error == 'token-future' %}
+            The token is from the future.<br>
+            <br>
+            {% include "_error_id.html" %}
+            Please contact the OFTC support.
+        {% else %}
+            Unknown error.<br>
+            <br>
+            {% include "_error_id.html" %}
+            Please contact the OFTC support.
+        {% endif %} 
+    </div>
+{% endblock %}
