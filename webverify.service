@@ -1,0 +1,16 @@
+[Unit]
+Description=OFTC Webverify
+
+[Service]
+RuntimeDirectory=oftc-webverify
+WorkingDirectory=/opt/oftc-webverify
+ExecStart=/opt/oftc-webverify/venv/bin/uwsgi /opt/oftc-webverify/webverify.uwsgi.ini
+ExecReload=/usr/bin/touch /opt/oftc-webverify/run/webverify.uwsgi.touch-reload
+Restart=always
+KillSignal=SIGTERM
+Type=notify
+StandardError=syslog
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,14 @@
+/opt/oftc-webverify/log/webverify.uwsgi.log {
+        su oftc-webverify oftc-webverify
+        daily
+        missingok
+        rotate 14
+        maxsize 50M
+        compress
+        delaycompress
+        notifempty
+        sharedscripts
+        postrotate
+                touch /opt/oftc-webverify/run/webverify.uwsgi.touch-logreopen
+        endscript
+}

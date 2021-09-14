@@ -65,7 +65,22 @@ Reopen log: `touch run/webverify.uwsgi.touch-logreopen`
 `uwsgi webverify.uwsgi.ini`
 
 #### Systemd Service
-todo
+A systemd service file suitable to be used as a user service is provided in `webverify.service` as an example.
+
+It expects `oftc-webverify` to be installed in `/opt/oftc-webverify`.
+
+Install `webverify.service` in `~/.config/systemd/user/webverify.service`
+
+Run `systemctl --user start webverify` to start it
+
+Run `systemctl --user enable webverify` to have it start automatically on boot.
+
+#### Logrotate
+A suitable logrotate example configuration is provided in `webverify.logrotate`.
+
+It can, for instance, be installed as `/etc/logrotate.d/webverify` on some distributions.
+
+It expects `oftc-webverify` to be installed in `/opt/oftc-webverify` and to be running as the user `oftc-webverify`
 
 ### Development
 For development you can use the Flask built-in server that provides some debugging help:
