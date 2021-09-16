@@ -98,7 +98,8 @@ def db_connect():
         conn = psycopg2.connect(
             host=cfg['PG_HOST'], port=cfg['PG_PORT'], sslmode=cfg['PG_SSLMODE'],
             database=cfg['PG_DATABASE'], user=cfg['PG_USER'], password=cfg['PG_PASSWORD'],
-            connect_timeout=cfg['PG_TIMEOUT'], application_name='webverify'
+            connect_timeout=cfg['PG_TIMEOUT'], application_name='webverify',
+            keepalives=1, keepalives_idle=30, keepalives_interval=10, keepalives_count=5
         )
     except (psycopg2.OperationalError, DbRetryDelayException) as e:
         if current_app.last_failed_db_conn == None:
