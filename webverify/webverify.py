@@ -164,7 +164,7 @@ def post(token, nick):
         if validate_hcaptcha(request.form['h-captcha-response']):
             did_set = set_nick_verified(nick)
             if did_set == None:
-                app.logger.notice("verify no_nick nick='%s' token='%s'", nick, token)
+                app.logger.info("verify no_nick nick='%s' token='%s'", nick, token)
                 return render_template("error_nonick.html", nick=nick), 404
             elif did_set == True:
                 app.logger.info("verify success nick='%s' token='%s'", nick, token)
