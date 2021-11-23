@@ -19,6 +19,7 @@
 {% block after_body %}
     <script>
         window.btn = document.getElementById('verification-button');
+        window.btn.value = "Verify";
         window.btn.disabled = true;
         {% if auto_submit %}
             window.btn.style.display = 'none';
@@ -37,6 +38,6 @@
         <div class="h-captcha" data-sitekey="{{ hcaptcha_site_key }}"
             data-callback="on_success" data-expired-callback="on_expire"></div>
         <input id="verification-button" name="verification-button"
-            class='verification-button' type="submit" value="Verify">
+            class='verification-button' type="submit" value="Please enable javascript" disabled>
     </form>
 {% endblock %}
