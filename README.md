@@ -103,6 +103,7 @@ secret = b'secret'
 hash_key = True
 nick = 'MyAwesomeNick'
 epoch = str(int(time.time()))
+message = 'nick' + ':' + epoch
 
 if hash_key:
   key = hashlib.sha1(secret).digest()
@@ -110,10 +111,11 @@ else:
   key = secret
 
 msg = (nick + ':' + epoch).encode()
-auth = hmac.new(key, message, hashlib.sha1).hexdigest()
+auth = hmac.new(key, message.encode(), hashlib.sha1).hexdigest()
 
 b16nick = base64.b16encode(nick.encode()).decode() 
 token = b16nick + ':' + epoch + ':' + auth
+print(token)
 ```
 
 ## License
